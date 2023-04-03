@@ -25,6 +25,13 @@ class B extends A{
         System.out.println("Remove");
     }
 }
+
+class C extends B{
+    C(){
+        super(10);
+    }
+
+}
 public class InheritanceDem {
     public static void main(String[] args) {
         B b= new B(10);
