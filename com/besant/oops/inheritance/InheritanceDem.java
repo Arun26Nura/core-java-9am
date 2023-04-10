@@ -20,6 +20,10 @@ class B extends A{
 
    int a;
 
+    public void add(){
+        System.out.println("B");
+    }
+
    @Override
     public void remove(){
         System.out.println("Remove");
@@ -30,11 +34,19 @@ class C extends B{
     C(){
         super(10);
     }
+    public void add(){
+        System.out.println("C");
+    }
 
 }
 public class InheritanceDem {
     public static void main(String[] args) {
         B b= new B(10);
+        b.add();
+        A a = new A(10);
+        a.add();
+        C c= new C();
+        c.add();
 
     }
 }
