@@ -19,6 +19,17 @@ public class FunctionalInterfaces {
 
 
     public static void main(String[] args) {
+    // () -> {};
+       Predicate<String> stringPredicate= new Predicate<String>() {
+           @Override
+           public boolean test(String s) {
+               return false;
+           }
+       };
+
+        Predicate<String> stringPredicates= input -> true;
+
+
       Predicate<Integer> predicate= number ->  number%2==0;
       boolean isEven= predicate.test(4);
       System.out.println(isEven);
@@ -31,11 +42,22 @@ public class FunctionalInterfaces {
       };
       double val= supplier.get();
 
-      BiPredicate<String, Integer> biPredicate= (string, integer) ->{
-          return true;
-      };
+      int a=50;
+      int b=20;
+      BiPredicate<Integer,Integer> biPredicate= (input1, input2) -> {return input1 > input2;};
+     boolean res= biPredicate.test(a,b);
+        System.out.println(res);
 
-       // Function<T, R>
+        BiConsumer<Integer,Integer> biConsumer= (input1, input2) -> {
+            if(input1> input2)
+                System.out.println("Input 1 is greater");
+            else
+                System.out.println("Input 2 is greater");
+        };
+        biConsumer.accept(a,b);
+
+       // function.apply("1");
+        Output<Integer,String,Integer> output= (integer, integer2) -> " ";
 
 
 
